@@ -10,8 +10,8 @@
 - [x] Prepare migrations (`CREATE TABLE`-s).
 - [x] Upsert Bitrix data into Postgres.
 
-- [ ] Deploy to server.
-- [ ] Set up Cron job (every day).
+- [x] Deploy to server.
+- [x] Set up Cron job (every day).
 
-- [ ] Set up Grafana.
-- [ ] Integrate with Postgres.
+- [x] Set up Grafana (integrate with Postgres).
+- [ ] Create dashboards.
