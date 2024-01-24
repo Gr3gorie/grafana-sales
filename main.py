@@ -182,18 +182,27 @@ async def postgres_insert_deals(conn: asyncpg.Connection, deals: List[Deal]):
 
 
 async def main():
+    print("Connecting to Postgres...")
     conn = await asyncpg.connect(user=os.environ["POSTGRES_USER"], password=os.environ["POSTGRES_PASSWORD"],
                                  database=os.environ["POSTGRES_DATABASE"], host=os.environ["POSTGRES_HOST"],
                                  port=os.environ["POSTGRES_PORT"])
+
+    print("Running migrations...")
     await run_migrations(conn)
+
+    print("Getting data from Bitrix")
     stages = await get_stages()
     sources = await get_sources()
     users = await get_users()
     deals = await get_deals()
+
+    print("Inserting Bitrix data to Postgres")
     await postgres_insert_stages(conn, stages)
     await postgres_insert_sources(conn, sources)
     await postgres_insert_users(conn, users)
     await postgres_insert_deals(conn, deals)
+
+    print("Done")
 
 
 if __name__ == '__main__':
