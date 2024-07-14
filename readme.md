@@ -1,17 +1,11 @@
 # Grafana Sales
 
-## Plan
+## Запуск
+1. Перейти в ~/important/grafana-sales/
+2. Запустить скрипт run.sh
 
-- [x] Connect to Bitrix.
-- [x] Export data from Bitrix (three entities).
-- [x] Define data models.
-
-- [x] Connect to Postgres.
-- [x] Prepare migrations (`CREATE TABLE`-s).
-- [x] Upsert Bitrix data into Postgres.
-
-- [x] Deploy to server.
-- [x] Set up Cron job (every day).
-
-- [x] Set up Grafana (integrate with Postgres).
-- [ ] Create dashboards.
+## Содержимое БД grafana_sales
+- таблица *deal* с информацией по всем сделкам
+- таблица *stage* с информацией по всем этапам, на которых могут находиться сделки
+- таблица *person* с информацией по людям
+- таблица *source* с информацией по источникам
